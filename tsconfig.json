@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "target": "ES6",
+    "skipLibCheck": true,
+    "strict": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "incremental": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "paths": {
+      "@/*": ["./*"]
+    }
+  },
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/account/page.jsx", "app/payments/page.jsx", "app/plans/page.jsx", "app/router/page.jsx", "components/account-info.jsx", "components/account-overview.jsx", "components/available-plans.jsx", "components/current-plan.jsx", "components/mpesa-payment.jsx", "components/password-settings.jsx", "components/payment-history.jsx", "components/payment-overview.jsx", "components/phone-number-settings.jsx", "components/quick-actions.jsx", "components/router-security.jsx", "components/router-status.jsx", "components/security-settings.jsx", "components/service-actions.jsx", "components/sidebar.jsx", "components/theme-provider.jsx", "components/usage-stats.jsx", "components/wifi-settings.jsx", "app/login/page.jsx", "app/otp-verification/page.jsx", "app/set-password/page.jsx", "app/forgot-password/page.jsx"],
+  "exclude": ["node_modules"]
+}

@@ -33,7 +33,7 @@ export function Sidebar() {
             <div className="w-8 h-8 bg-sidebar-primary rounded-lg flex items-center justify-center">
               <Wifi className="w-5 h-5 text-sidebar-primary-foreground" />
             </div>
-            <span className="font-heading font-bold text-sidebar-foreground">NetConnect</span>
+            <span className="font-heading font-bold text-sidebar-foreground">Konnekt</span>
           </div>
         )}
         <Button

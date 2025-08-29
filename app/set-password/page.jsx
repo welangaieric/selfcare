@@ -17,7 +17,7 @@ export default function SetPasswordPage() {
   const [otp, setOtp] = useState("")
   const [isLoading, setIsLoading] = useState(false)
   const [error, setError] = useState("")
-  const [step, setStep] = useState("request")
+  const [step, setStep] = useState("verify")
   const router = useRouter()
 
   const handleRequestOTP = async (e) => {
@@ -37,12 +37,12 @@ export default function SetPasswordPage() {
     setError("")
 
     try {
-      const response = await fetch("https://server.konnektsmartlife.com/web/set-pass", {
+      const response = await fetch("https://server.konnektsmartlife.com/web/request_otp", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ account, password }),
+        body: JSON.stringify({ account }),
       })
 
       if (response.ok) {

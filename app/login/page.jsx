@@ -23,7 +23,7 @@ export default function LoginPage() {
     setError("")
 
     try {
-      const response = await fetch("https://mydomain.com/web/portal-login", {
+      const response = await fetch("https://server.konnektsmartlife.com/web/portal-login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

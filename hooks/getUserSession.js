@@ -1,19 +1,23 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from "react"
 
-export default function useGetAccountInfo({username,serverURL}) {
-    const [userData,setUserData ] = useState([])
+
+export default function getUserSession({account}) {
+  const [sessionData,setSessionData ] = useState([])
     const [loading,setLoading] = useState(false)
     const [error,setError] = useState(null)
 
     const fetchUserData = async ()=>{
         setLoading(true)
         try {
-            const res = await fetch(`https://server.konnektsmartlife.com/v2/pppoe/users${username}`)
+            const res = await fetch(`https://server.konnektsmartlife.com/web/session/`,{
+                method:'POST',
+                body:JSON.stringify({account})
+            })
             if(!res.ok){
                 throw new Error(`HTTP error! status: ${res.status}`)
             }
             const data = await res.json()
-            setUserData(data)
+            setSessionData(data)
         } catch (error) {
             console.log('Error sending request:',error.message||error)
             setError(error)
@@ -23,7 +27,7 @@ export default function useGetAccountInfo({username,serverURL}) {
     }
     useEffect(()=>{
         fetchUserData()
-    },[serverURL,username])
-
-  return {userData,loading,error}
+    },[serverURL,account])
+  return {sessionData,loading,error
+  }
 }

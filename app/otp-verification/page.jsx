@@ -34,7 +34,7 @@ export default function OTPVerificationPage() {
 
     try {
       // This would typically verify the OTP with your backend
-      const response = await fetch("https://server.konnektsmartlife.com/web/verify-otp", {
+      const response = await fetch("https://server.konnektsmartlife.com/web/verify_login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -45,7 +45,7 @@ export default function OTPVerificationPage() {
       if (response.ok) {
         sessionStorage.removeItem("loginAccount")
         // Redirect to dashboard or home page
-        router.push("/dashboard")
+        router.push("/")
       } else {
         const errorData = await response.json()
         setError(errorData.message || "Invalid OTP. Please try again.")
@@ -62,7 +62,7 @@ export default function OTPVerificationPage() {
     setError("")
 
     try {
-      const response = await fetch("https://server.konnektsmartlife.com/web/resend-otp", {
+      const response = await fetch("https://server.konnektsmartlife.com/web/request_otp", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
